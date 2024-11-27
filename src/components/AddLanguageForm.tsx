@@ -1,31 +1,29 @@
 import React, { useState } from 'react';
-import { Box, Button, Input } from '@chakra-ui/react';
+import { Input, Button, Box } from '@chakra-ui/react';
 
 interface AddLanguageFormProps {
   onAdd: (name: string) => void;
 }
 
 const AddLanguageForm: React.FC<AddLanguageFormProps> = ({ onAdd }) => {
-  const [name, setName] = useState('');
+  const [languageName, setLanguageName] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (name.trim()) {
-      onAdd(name);
-      setName('');
+  const handleAdd = () => {
+    if (languageName.trim()) {
+      onAdd(languageName.trim());
+      setLanguageName('');
     }
   };
 
   return (
-    <Box as="form" onSubmit={handleSubmit} mb={4}>
+    <Box display="flex" mt={4} mb={4}>
       <Input
-        placeholder="Enter language name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        placeholder="Додати нову мову"
+        value={languageName}
+        onChange={(e) => setLanguageName(e.target.value)}
+        mr={2}
       />
-      <Button colorScheme='purple' variant='outline' type="submit" mt={2}>
-        Add Language
-      </Button>
+      <Button onClick={handleAdd}>Додати</Button>
     </Box>
   );
 };

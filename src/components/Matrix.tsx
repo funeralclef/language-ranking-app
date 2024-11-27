@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Thead, Tbody, Tr, Th, Td, Box} from '@chakra-ui/react';
+import { Box, Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react';
 
 interface MatrixProps {
   matrix: number[][];
@@ -9,22 +9,22 @@ interface MatrixProps {
 
 const Matrix: React.FC<MatrixProps> = ({ matrix, languages, onHide }) => {
   return (
-    <Box mt={4} maxW="100%" overflowX="auto" borderWidth={1} borderRadius="lg" p={4}>
-      <Table variant="striped" size="sm">
+    <Box mt={4}>
+      <Table variant="simple" size="sm">
         <Thead>
           <Tr>
-            <Th></Th>
-            {languages.map((lang, idx) => (
-              <Th key={idx} textAlign="center">{lang}</Th>
+            <Th>Object</Th>
+            {languages.map((lang, i) => (
+              <Th key={i}>{i + 1}</Th>  // Виводимо індекс об'єкта
             ))}
           </Tr>
         </Thead>
         <Tbody>
           {matrix.map((row, i) => (
             <Tr key={i}>
-              <Td fontWeight="bold">{languages[i]}</Td>
-              {row.map((value, j) => (
-                <Td key={j} textAlign="center">{value}</Td>
+              <Td>{i + 1}</Td>  {/* Виводимо індекс об'єкта для кожного рядка */}
+              {row.map((cell, j) => (
+                <Td key={j}>{cell}</Td>
               ))}
             </Tr>
           ))}
@@ -33,5 +33,6 @@ const Matrix: React.FC<MatrixProps> = ({ matrix, languages, onHide }) => {
     </Box>
   );
 };
+
 
 export default Matrix;

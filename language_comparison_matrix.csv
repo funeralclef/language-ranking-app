@@ -1,0 +1,11 @@
+,Mandarin Chinese,Japanese,Korean,Arabic,Hindi,Vietnamese,Spanish,Bengali,English,German
+Mandarin Chinese,0,1,1,1,1,1,1,1,1,1,1,1
+Japanese,-1,0,1,1,1,1,1,1,1,1,1,1
+Korean,-1,-1,0,1,1,1,1,1,1,1,1,1
+Arabic,-1,-1,-1,0,1,1,1,1,1,1,1,1
+Hindi,-1,-1,-1,-1,0,1,1,1,1,1,1,1
+Vietnamese,-1,-1,-1,-1,-1,0,1,1,1,1,1,1
+Spanish,-1,-1,-1,-1,-1,-1,0,1,1,1,1,1
+Bengali,-1,-1,-1,-1,-1,-1,-1,0,1,1,1,1
+English,-1,-1,-1,-1,-1,-1,-1,-1,0,1,1,1
+German,-1,-1,-1,-1,-1,-1,-1,-1,-1,0,1,1
